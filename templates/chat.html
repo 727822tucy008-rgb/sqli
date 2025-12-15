@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Chat Room</h2>
+
+<form method="POST">
+    <input name="message" placeholder="Enter message">
+    <button>Send</button>
+</form>
+
+<hr>
+
+{% for c in chats %}
+<p><b>{{ c[0] }}</b>: {{ c[1] }}</p>
+{% endfor %}
+
+<a href="/dashboard">Back</a>
+</body>
+</html>
