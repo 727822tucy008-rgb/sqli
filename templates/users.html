@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>User List</h2>
+
+<table border="1">
+<tr>
+<th>Username</th>
+<th>Role</th>
+<th>Action</th>
+</tr>
+
+{% for u in users %}
+<tr>
+<td>{{ u[0] }}</td>
+<td>{{ u[1] }}</td>
+<td>
+    {% if role == "admin" %}
+        <a href="/delete/{{ u[0] }}">Delete</a>
+    {% else %}
+        View only
+    {% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/dashboard">Back</a>
+</body>
+</html>
